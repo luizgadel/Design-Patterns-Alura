@@ -1,0 +1,97 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{40C5C5D5-2075-4102-B937-ABF6ED8A2ECE}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>CursoPadroesProjeto</RootNamespace>
+    <AssemblyName>CursoPadroesProjeto</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Desconto\DescontoPorVendaCasada.cs" />
+    <Compile Include="Desconto\IDesconto.cs" />
+    <Compile Include="Desconto\DescontoPorMaisDeCincoItens.cs" />
+    <Compile Include="Desconto\DescontoPorOrcamentoMaiorQueQuinhentosReais.cs" />
+    <Compile Include="Desconto\SemDesconto.cs" />
+    <Compile Include="Desconto\TestaCorrente.cs" />
+    <Compile Include="Imposto\CalculadorDeImpostos.cs" />
+    <Compile Include="ContaBancaria.cs" />
+    <Compile Include="Imposto\ICCC.cs" />
+    <Compile Include="Imposto\ICMS.cs" />
+    <Compile Include="Imposto\ICPP.cs" />
+    <Compile Include="Imposto\IHIT.cs" />
+    <Compile Include="Imposto\IKCV.cs" />
+    <Compile Include="Imposto\Imposto.cs" />
+    <Compile Include="Imposto\TemplateDeImpostoCondicional.cs" />
+    <Compile Include="Investimento\Investimento.cs" />
+    <Compile Include="Investimento\InvestimentoArrojado.cs" />
+    <Compile Include="Investimento\InvestimentoConservador.cs" />
+    <Compile Include="Investimento\InvestimentoModerado.cs" />
+    <Compile Include="Imposto\ISS.cs" />
+    <Compile Include="Item.cs" />
+    <Compile Include="Orcamento.cs" />
+    <Compile Include="RequisicoesWeb\ProcessadorRequisicaoPorcento.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Investimento\RealizadorDeInvestimentos.cs" />
+    <Compile Include="Relatorios\RelatorioComplexo.cs" />
+    <Compile Include="Relatorios\RelatorioSimples.cs" />
+    <Compile Include="Relatorios\Relatorio.cs" />
+    <Compile Include="RequisicoesWeb\ContaParaRequisicao.cs" />
+    <Compile Include="RequisicoesWeb\ProcessadorRequisicao.cs" />
+    <Compile Include="RequisicoesWeb\ProcessadorRequisicaoCSV.cs" />
+    <Compile Include="RequisicoesWeb\ProcessadorRequisicaoXML.cs" />
+    <Compile Include="RequisicoesWeb\Requisicao.cs" />
+    <Compile Include="RequisicoesWeb\SemProcessamentoRequisicao.cs" />
+    <Compile Include="Recursos.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Recursos.resx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Recursos.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Recursos.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
