@@ -8,6 +8,10 @@ namespace CursoPadroesProjeto.Impostos
 {
     public class ICPP : TemplateDeImpostoCondicional
     {
+        public ICPP(Imposto outroImposto) : base(outroImposto) { }
+
+        public ICPP() : base() { }
+
         protected override bool DeveUsarMaximaTaxacao(Orcamento orcamento)
         {
             if (orcamento.Valor >= 500)

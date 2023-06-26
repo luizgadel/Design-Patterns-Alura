@@ -9,6 +9,10 @@ namespace CursoPadroesProjeto.Impostos
     public class IKCV: TemplateDeImpostoCondicional
     {
 
+        public IKCV(Imposto outroImposto) : base(outroImposto) { }
+
+        public IKCV() : base() { }
+
         protected override bool DeveUsarMaximaTaxacao(Orcamento orcamento)
         {
             if (orcamento.Valor > 500 && temItemMaiorQue100ReaisNo(orcamento))
