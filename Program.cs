@@ -1,4 +1,5 @@
-﻿using CursoPadroesProjeto.Relatorios;
+﻿using CursoPadroesProjeto.Impostos;
+using CursoPadroesProjeto.Relatorios;
 using CursoPadroesProjeto.RequisicoesWeb;
 using System;
 
@@ -8,19 +9,11 @@ namespace CursoPadroesProjeto
     {
         static void Main(string[] args)
         {
-            ContaParaRequisicao conta = new ContaParaRequisicao(1, "Luiz");
+            Orcamento orcamento = new Orcamento(1000);
+            Imposto iss = new ISS(new ICMS(new ICCC()));
 
-            Requisicao req = new Requisicao(Formato.NIL);
-
-            ProcessadorRequisicao p3 = new ProcessadorRequisicaoPorcento();
-            ProcessadorRequisicao p2 = new ProcessadorRequisicaoCSV(p3);
-            ProcessadorRequisicao p1 = new ProcessadorRequisicaoXML(p2);
-
-            Console.WriteLine(p1.Processa(conta, req));
-
-            Relatorio rel = new RelatorioSimples();
-
-            rel.Imprime(conta);
+            double imposto = iss.Calcula(orcamento);
+            Console.WriteLine(imposto);
 
             Console.ReadKey();
         }

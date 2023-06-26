@@ -8,7 +8,11 @@ namespace CursoPadroesProjeto.Impostos
 {
     public class ICCC : Imposto
     {
-        public double Calcula(Orcamento orcamento)
+        public ICCC(Imposto outroImposto) : base(outroImposto) { }
+
+        public ICCC() : base() { }
+
+        public override double Calcula(Orcamento orcamento)
         {
             double resultado = 0.0;
             if (orcamento.Valor < 1000)
@@ -24,7 +28,7 @@ namespace CursoPadroesProjeto.Impostos
                 resultado += orcamento.Valor * 0.08 + 30;
             }
 
-            return resultado;
+            return resultado + CalculaOutroImposto(orcamento);
         }
     }
 }
