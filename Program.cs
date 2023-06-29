@@ -20,8 +20,6 @@ namespace CursoPadroesProjeto
             reforma.AplicaDescontoExtra();
             Console.WriteLine(reforma.Valor);
             reforma.Finaliza();
-            reforma.AplicaDescontoExtra();
-            Console.WriteLine(reforma.Valor);
             Console.ReadKey();
         }
     }
