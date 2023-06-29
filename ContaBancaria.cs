@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CursoPadroesProjeto.EstadosDeUmaConta;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,16 +9,23 @@ namespace CursoPadroesProjeto
 {
     public class ContaBancaria
     {
-        public double Saldo { get; private set; }
+        public double Saldo { get; set; }
+        public EstadoDeUmaConta EstadoAtual { get; set; }
 
         public ContaBancaria(double saldo) 
         {
-            this.Saldo = saldo;
+            Saldo = saldo;
+            EstadoAtual = new ContaPositiva();
         }
 
-        public void adicionaSaldo(double adicional)
+        public void adicionaSaldo(double valor)
         {
-            this.Saldo += adicional;
+            EstadoAtual.Deposita(this, valor);
+        }
+
+        public void retiraSaldo(double valor)
+        {
+            EstadoAtual.Saca(this, valor);
         }
     }
 }

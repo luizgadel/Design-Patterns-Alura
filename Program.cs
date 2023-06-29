@@ -13,13 +13,18 @@ namespace CursoPadroesProjeto
     {
         static void Main(string[] args)
         {
-            Orcamento reforma = new Orcamento(100);
-            reforma.AplicaDescontoExtra();
-            Console.WriteLine(reforma.Valor);
-            reforma.Aprova();
-            reforma.AplicaDescontoExtra();
-            Console.WriteLine(reforma.Valor);
-            reforma.Finaliza();
+            Conta conta = new Conta(500);
+            Console.WriteLine(conta.Saldo);
+            conta.retiraSaldo(450);
+            Console.WriteLine(conta.Saldo);
+            conta.adicionaSaldo(50);
+            Console.WriteLine(conta.Saldo);
+            conta.retiraSaldo(100);
+            Console.WriteLine(conta.Saldo);
+            conta.adicionaSaldo(50);
+            Console.WriteLine(conta.Saldo);
+            conta.retiraSaldo(100);
+            Console.WriteLine(conta.Saldo);
             Console.ReadKey();
         }
     }
